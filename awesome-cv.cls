@@ -645,9 +645,29 @@
     \end{tabular*}
   \end{center}
 }
+
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
 \newcommand*{\cvskill}[2]{%
+	\skilltypestyle{#1} & \skillsetstyle{#2} \\
+}
+
+% Define an environment for cvlang
+\newenvironment{cvlangs}{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-2.0mm}
+  \begin{center}
+    \setlength\tabcolsep{1ex}
+    \setlength{\extrarowheight}{0pt}
+    \begin{tabular}{ r l }
+}{%
+    \end{tabular}
+  \end{center}
+}
+
+% Define a line of cv information(skill)
+% Usage: \cvskill{<type>}{<skillset>}
+\newcommand*{\cvlang}[2]{%
 	\skilltypestyle{#1} & \skillsetstyle{#2} \\
 }
 
