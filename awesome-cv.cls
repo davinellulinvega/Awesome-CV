@@ -94,7 +94,7 @@
 %                Configuration for directory locations
 %-------------------------------------------------------------------------------
 % Configure a directory location for fonts(default: 'fonts/')
-\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
+\newcommand*{\fontdir}[1][/usr/share/fonts/TTF/]{\def\@fontdir{#1}}
 \fontdir
 
 
@@ -161,7 +161,9 @@
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
-\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
+\newfontfamily\fasolid[Path=\@fontdir]{fa-solid-900}
+\newfontfamily\fabrands[Path=\@fontdir]{fa-brands-400}
+\newfontfamily\faregular[Path=\@fontdir]{fa-regular-400}
 % Set font for header (default is Roboto)
 \newfontfamily\headerfont[
   Path=\@fontdir,
@@ -439,7 +441,7 @@
       \ifthenelse{\isundefined{\@mobile}}%
         {}%
         {%
-          \faMobile\acvHeaderIconSep\@mobile%
+           \faPhone\acvHeaderIconSep\@mobile%
           \setbool{isstart}{false}%
         }%
       \ifthenelse{\isundefined{\@email}}%
